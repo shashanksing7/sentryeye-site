@@ -1,4 +1,4 @@
-<section class="blog-hero">
+<!-- <section class="blog-hero">
   <div class="container">
     <span class="tag">// TECHNICAL BLOG</span>
     <h1 style="margin:1rem 0 1rem;">Engineering notes<br>from the edge.</h1>
@@ -18,5 +18,105 @@
         </div>
       </div>
     </div>
+  </div>
+</section> -->
+<section class="blog-hero">
+  <div class="container">
+    <span class="tag">// TECHNICAL BLOG</span>
+    <h1 style="margin:1rem 0 1rem;">Engineering notes<br>from the edge.</h1>
+    <p style="max-width:500px; line-height:1.75; font-size:1rem;">
+      Deep-dives into Android security architecture, privacy engineering, and the technical decisions behind SentryEye.
+    </p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:0.5rem;">
+      <span class="tag">LATEST POSTS</span>
+      <span style="font-family:var(--mono);font-size:0.68rem;color:var(--muted);">3 articles</span>
+    </div>
+    
+    <div class="blog-grid">
+      <!-- Post 1: Architecture -->
+      <div class="blog-card">
+        <div class="blog-card-img">
+          <div class="img-pattern"></div>
+          <div class="img-icon">🏗️</div>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-meta">
+            <span class="tag">architecture</span>
+            <span style="font-family:var(--mono);font-size:0.65rem;color:var(--muted);">12 min read</span>
+          </div>
+          <div class="blog-card-title">Architecting Local-First Android Apps with Room and Jetpack Compose</div>
+          <p class="blog-card-excerpt">How we built SentryEye's data layer to operate entirely on-device using Room, WorkManager, and a strict no-egress policy — and the architectural patterns that make it sustainable.</p>
+          <div class="blog-card-footer">
+            <span>May 12, 2025</span>
+            <a href="#" class="read-more" onclick="return false;">Read article →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Post 2: Security Audit -->
+      <div class="blog-card">
+        <div class="blog-card-img">
+          <div class="img-pattern"></div>
+          <div class="img-icon">🕵️</div>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-meta">
+            <span class="tag red">security</span>
+            <span style="font-family:var(--mono);font-size:0.65rem;color:var(--muted);">8 min read</span>
+          </div>
+          <div class="blog-card-title">Why Traditional Mobile Security Apps Are Privacy Nightmares</div>
+          <p class="blog-card-excerpt">An audit of five leading Android security apps reveals a disturbing pattern: the apps claiming to protect your privacy are among the most aggressive data collectors in the Play Store.</p>
+          <div class="blog-card-footer">
+            <span>Apr 28, 2025</span>
+            <a href="#" class="read-more" onclick="return false;">Read article →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Post 3: Cloud Sync -->
+      <div class="blog-card">
+        <div class="blog-card-img">
+          <div class="img-pattern"></div>
+          <div class="img-icon">☁️</div>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-meta">
+            <span class="tag emerald">cloud</span>
+            <span style="font-family:var(--mono);font-size:0.65rem;color:var(--muted);">10 min read</span>
+          </div>
+          <div class="blog-card-title">Securing Cloud Backups: Implementing Direct Google Drive OAuth Authentication</div>
+          <p class="blog-card-excerpt">A step-by-step walkthrough of SentryEye's Drive backup implementation — from OAuth 2.0 scope selection to encrypted multipart upload — with no relay server in the path.</p>
+          <div class="blog-card-footer">
+            <span>Apr 4, 2025</span>
+            <a href="#" class="read-more" onclick="return false;">Read article →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Newsletter Dashboard Module -->
+    <div class="newsletter" style="margin-top:4rem;">
+      <div>
+        <span class="tag" style="margin-bottom:0.75rem;display:inline-block;">// SUBSCRIBE</span>
+        <h3 style="color:var(--fg);font-size:1rem;font-weight:500;margin-bottom:0.3rem;">Get new articles in your inbox.</h3>
+        <p style="font-size:0.83rem;">Technical deep-dives, Android security research, and SentryEye updates. No spam. Unsubscribe anytime.</p>
+        <div class="newsletter-input-row">
+          <input type="email" placeholder="your@email.com" />
+          <button class="btn btn-primary" style="font-size:0.78rem;">Subscribe</button>
+        </div>
+      </div>
+      <div style="font-family:var(--mono);font-size:0.72rem;color:var(--muted);line-height:1.8;white-space:nowrap;">
+        <div style="color:var(--fg);margin-bottom:0.5rem;">// stats</div>
+        <div>readers &nbsp; <span style="color:var(--emerald)">2,400+</span></div>
+        <div>articles &nbsp; <span style="color:var(--violet)">14</span></div>
+        <div>avg read &nbsp; <span style="color:var(--amber)">9.2 min</span></div>
+      </div>
+    </div>
+
   </div>
 </section>
