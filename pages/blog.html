@@ -1,153 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SentryEye — Blog</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
+<section class="blog-hero">
+  <div class="container">
+    <span class="tag">// TECHNICAL BLOG</span>
+    <h1 style="margin:1rem 0 1rem;">Engineering notes<br>from the edge.</h1>
+    <p style="max-width:500px; line-height:1.75; font-size:1rem;">Deep-dives into Android security architecture, privacy engineering, and the technical decisions behind SentryEye.</p>
+  </div>
+</section>
 
-<nav>
-  <a class="nav-logo" href="index.html">
-    <div class="nav-logo-dot"></div>
-    Sentry<span>Eye</span>
-  </a>
-  <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="blog.html">Blog</a></li>
-    <li><a href="contact.html">Contact</a></li>
-    <li><a href="privacy.html">Privacy Policy</a></li>
-  </ul>
-  <a href="#" class="nav-cta">&#x2B07; Download APK</a>
-  <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
-    <span></span><span></span><span></span>
-  </button>
-</nav>
-
-<div class="mobile-menu" id="mobile-menu">
-  <a href="index.html"   onclick="closeMenu()">Home</a>
-  <a href="about.html"   onclick="closeMenu()">About</a>
-  <a href="blog.html"    onclick="closeMenu()">Blog</a>
-  <a href="contact.html" onclick="closeMenu()">Contact</a>
-  <a href="privacy.html" onclick="closeMenu()">Privacy Policy</a>
-  <a href="#" class="mob-cta" onclick="closeMenu()">&#x2B07; Download APK</a>
-</div>
-
-<!-- ═══════════════════════ PAGE CONTENT ═══════════════════════ -->
-  <section class="blog-hero">
-    <div class="container">
-      <span class="tag">// TECHNICAL BLOG</span>
-      <h1 style="margin:1rem 0 1rem;">Engineering notes<br>from the edge.</h1>
-      <p style="max-width:500px; line-height:1.75; font-size:1rem;">
-        Deep-dives into Android security architecture, privacy engineering, and the technical decisions behind SentryEye.
-      </p>
-    </div>
-  </section>
-
-  <section>
-    <div class="container">
-      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:0.5rem;">
-        <span class="tag">LATEST POSTS</span>
-        <span style="font-family:var(--mono);font-size:0.68rem;color:var(--muted);">3 articles</span>
-      </div>
-      <div class="blog-grid">
-
-        <div class="blog-card">
-          <div class="blog-card-img">
-            <div class="img-pattern"></div>
-            <div class="img-icon">🏗️</div>
-          </div>
-          <div class="blog-card-body">
-            <div class="blog-card-meta">
-              <span class="tag">architecture</span>
-              <span style="font-family:var(--mono);font-size:0.65rem;color:var(--muted);">12 min read</span>
-            </div>
-            <div class="blog-card-title">Architecting Local-First Android Apps with Room and Jetpack Compose</div>
-            <p class="blog-card-excerpt">How we built SentryEye's data layer to operate entirely on-device using Room, WorkManager, and a strict no-egress policy — and the architectural patterns that make it sustainable.</p>
-            <div class="blog-card-footer">
-              <span>May 12, 2025</span>
-              <a href="#" class="read-more" onclick="return false;">Read article →</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="blog-card">
-          <div class="blog-card-img">
-            <div class="img-pattern"></div>
-            <div class="img-icon">🕵️</div>
-          </div>
-          <div class="blog-card-body">
-            <div class="blog-card-meta">
-              <span class="tag red">security</span>
-              <span style="font-family:var(--mono);font-size:0.65rem;color:var(--muted);">8 min read</span>
-            </div>
-            <div class="blog-card-title">Why Traditional Mobile Security Apps Are Privacy Nightmares</div>
-            <p class="blog-card-excerpt">An audit of five leading Android security apps reveals a disturbing pattern: the apps claiming to protect your privacy are among the most aggressive data collectors in the Play Store.</p>
-            <div class="blog-card-footer">
-              <span>Apr 28, 2025</span>
-              <a href="#" class="read-more" onclick="return false;">Read article →</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="blog-card">
-          <div class="blog-card-img">
-            <div class="img-pattern"></div>
-            <div class="img-icon">☁️</div>
-          </div>
-          <div class="blog-card-body">
-            <div class="blog-card-meta">
-              <span class="tag emerald">cloud</span>
-              <span style="font-family:var(--mono);font-size:0.65rem;color:var(--muted);">10 min read</span>
-            </div>
-            <div class="blog-card-title">Securing Cloud Backups: Implementing Direct Google Drive OAuth Authentication</div>
-            <p class="blog-card-excerpt">A step-by-step walkthrough of SentryEye's Drive backup implementation — from OAuth 2.0 scope selection to encrypted multipart upload — with no relay server in the path.</p>
-            <div class="blog-card-footer">
-              <span>Apr 4, 2025</span>
-              <a href="#" class="read-more" onclick="return false;">Read article →</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Newsletter -->
-      <div class="newsletter">
-        <div>
-          <span class="tag" style="margin-bottom:0.75rem;display:inline-block;">// SUBSCRIBE</span>
-          <h3 style="color:var(--fg);font-size:1rem;font-weight:500;margin-bottom:0.3rem;">Get new articles in your inbox.</h3>
-          <p style="font-size:0.83rem;">Technical deep-dives, Android security research, and SentryEye updates. No spam. Unsubscribe anytime.</p>
-          <div class="newsletter-input-row">
-            <input type="email" placeholder="your@email.com" />
-            <button class="btn btn-primary" style="font-size:0.78rem;">Subscribe</button>
-          </div>
-        </div>
-        <div style="font-family:var(--mono);font-size:0.72rem;color:var(--muted);line-height:1.8;white-space:nowrap;">
-          <div style="color:var(--fg);margin-bottom:0.5rem;">// stats</div>
-          <div>readers &nbsp; <span style="color:var(--emerald)">2,400+</span></div>
-          <div>articles &nbsp; <span style="color:var(--violet)">14</span></div>
-          <div>avg read &nbsp; <span style="color:var(--amber)">9.2 min</span></div>
+<section>
+  <div class="container">
+    <div class="blog-grid">
+      <div class="blog-card">
+        <div class="blog-card-img"><div class="img-pattern"></div><div class="img-icon">🏗️</div></div>
+        <div class="blog-card-body">
+          <div class="blog-card-meta"><span class="tag">architecture</span></div>
+          <div class="blog-card-title">Architecting Local-First Android Apps with Room and Jetpack Compose</div>
+          <p class="blog-card-excerpt">How we built SentryEye's data layer to operate entirely on-device using Room, WorkManager, and a strict no-egress policy.</p>
         </div>
       </div>
     </div>
-  </section>
-
-  <footer>
-    <div class="container">
-      <div class="footer-bottom">
-        <span>© 2025 SentryEye — <a href="#" href="privacy.html" style="color:var(--violet);text-decoration:none;">Privacy Policy</a></span>
-        <span>All views are those of a single developer building honestly.</span>
-      </div>
-    </div>
-  </footer>
-
-<!-- ═══════════════════════════════════════════════════════════ -->
-
-<script src="script.js"></script>
-
-</body>
-</html>
+  </div>
+</section>

@@ -1,148 +1,34 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SentryEye — About</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
+<section class="about-hero">
+  <div class="container">
+    <span class="tag">// ABOUT</span>
+    <h1 style="margin:1rem 0 1.5rem;">The tools we build<br>don't know who you are.</h1>
+    <p class="about-body">SentryEye was born from a frustration: every mobile security app on the market was harvesting more data than the threats it claimed to protect against.</p>
+    <p class="about-body" style="margin-top:1rem;">So we built our own. A single-developer utility, open-sourced from day one, with a strict covenant: <strong>all operations run locally, always</strong>.</p>
+  </div>
+</section>
 
-<nav>
-  <a class="nav-logo" href="index.html">
-    <div class="nav-logo-dot"></div>
-    Sentry<span>Eye</span>
-  </a>
-  <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="blog.html">Blog</a></li>
-    <li><a href="contact.html">Contact</a></li>
-    <li><a href="privacy.html">Privacy Policy</a></li>
-  </ul>
-  <a href="#" class="nav-cta">&#x2B07; Download APK</a>
-  <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
-    <span></span><span></span><span></span>
-  </button>
-</nav>
-
-<div class="mobile-menu" id="mobile-menu">
-  <a href="index.html"   onclick="closeMenu()">Home</a>
-  <a href="about.html"   onclick="closeMenu()">About</a>
-  <a href="blog.html"    onclick="closeMenu()">Blog</a>
-  <a href="contact.html" onclick="closeMenu()">Contact</a>
-  <a href="privacy.html" onclick="closeMenu()">Privacy Policy</a>
-  <a href="#" class="mob-cta" onclick="closeMenu()">&#x2B07; Download APK</a>
-</div>
-
-<!-- ═══════════════════════ PAGE CONTENT ═══════════════════════ -->
-  <section class="about-hero">
-    <div class="container">
-      <span class="tag">// ABOUT</span>
-      <h1 style="margin:1rem 0 1.5rem;">The tools we build<br>don't know who you are.</h1>
-      <p class="about-body">
-        SentryEye was born from a frustration: every mobile security app on the market was harvesting more data than the threats it claimed to protect against. We believed that security software had no business knowing anything about you.
-      </p>
-      <p class="about-body" style="margin-top:1rem;">
-        So we built our own. A single-developer utility, open-sourced from day one, with a strict covenant: <strong>all operations run locally, always</strong>. The architecture was never an afterthought — it was the founding constraint.
-      </p>
+<section>
+  <div class="container">
+    <div class="section-header">
+      <span class="tag">// PHILOSOPHY</span>
+      <h2>Three principles.<br>No exceptions.</h2>
     </div>
-  </section>
-
-  <section>
-    <div class="container">
-      <div class="section-header">
-        <span class="tag">// PHILOSOPHY</span>
-        <h2>Three principles.<br>No exceptions.</h2>
+    <div class="philosophy-grid">
+      <div class="phil-card">
+        <div class="phil-num">01 / LOCAL_FIRST</div>
+        <div class="phil-title">Local-First by Design</div>
+        <p class="phil-desc">Every feature is architected around local execution. Network access is a privilege granted explicitly by the user.</p>
       </div>
-      <div class="philosophy-grid">
-        <div class="phil-card">
-          <div class="phil-num">01 / LOCAL_FIRST</div>
-          <div class="phil-title">Local-First by Design</div>
-          <p class="phil-desc">Every feature is architected around local execution. Network access is a privilege granted explicitly by the user, not a default behavior.</p>
-        </div>
-        <div class="phil-card">
-          <div class="phil-num">02 / OPEN_SOURCE</div>
-          <div class="phil-title">Radical Transparency</div>
-          <p class="phil-desc">The source code is public and auditable by anyone. Trust should be verifiable, not a marketing claim. Read it, fork it, scrutinize it.</p>
-        </div>
-        <div class="phil-card">
-          <div class="phil-num">03 / MINIMAL_SURFACE</div>
-          <div class="phil-title">Minimal Attack Surface</div>
-          <p class="phil-desc">We request only the permissions we need, use only the APIs we must, and ship the smallest binary that does the job correctly.</p>
-        </div>
+      <div class="phil-card">
+        <div class="phil-num">02 / OPEN_SOURCE</div>
+        <div class="phil-title">Radical Transparency</div>
+        <p class="phil-desc">The source code is public and auditable by anyone. Trust should be verifiable, not a marketing claim.</p>
+      </div>
+      <div class="phil-card">
+        <div class="phil-num">03 / MINIMAL_SURFACE</div>
+        <div class="phil-title">Minimal Attack Surface</div>
+        <p class="phil-desc">We request only the permissions we need, use only the APIs we must, and ship the smallest binary.</p>
       </div>
     </div>
-  </section>
-
-  <section class="roadmap">
-    <div class="container">
-      <div class="section-header">
-        <span class="tag">// ROADMAP</span>
-        <h2>Where we've been.<br>Where we're going.</h2>
-      </div>
-      <div class="timeline">
-        <div class="timeline-item done">
-          <div class="timeline-date">Q1 2024</div>
-          <div class="timeline-content">
-            <div class="timeline-title">Initial Release — v1.0</div>
-            <p class="timeline-desc">Core intruder detection, local Room database with AES-256 encryption, and basic PIN monitoring shipped to beta testers.</p>
-          </div>
-        </div>
-        <div class="timeline-item done">
-          <div class="timeline-date">Q3 2024</div>
-          <div class="timeline-content">
-            <div class="timeline-title">Jetpack Compose Migration — v2.0</div>
-            <p class="timeline-desc">Full UI rewrite in Jetpack Compose. Battery overhead reduced from 5.8% to under 2%. Material You dynamic theming introduced.</p>
-          </div>
-        </div>
-        <div class="timeline-item done">
-          <div class="timeline-date">Q4 2024</div>
-          <div class="timeline-content">
-            <div class="timeline-title">Direct Drive Sync — v2.2</div>
-            <p class="timeline-desc">Google Drive OAuth 2.0 backup implemented with device-to-cloud direct transfer. No intermediate relay servers.</p>
-          </div>
-        </div>
-        <div class="timeline-item current">
-          <div class="timeline-date">Q2 2025</div>
-          <div class="timeline-content">
-            <div class="timeline-title">Stable Production Build — v2.4</div>
-            <p class="timeline-desc">Performance hardening, expanded notification controls, accessibility improvements, and the first public APK release. <span class="tag" style="font-size:0.62rem;">current</span></p>
-          </div>
-        </div>
-        <div class="timeline-item upcoming">
-          <div class="timeline-date">Q4 2025</div>
-          <div class="timeline-content">
-            <div class="timeline-title">On-Device ML — v3.0</div>
-            <p class="timeline-desc">Integration of a quantized TFLite model for on-device face recognition in intruder captures. Edge-optimized inference with no cloud dependency.</p>
-          </div>
-        </div>
-        <div class="timeline-item upcoming">
-          <div class="timeline-date">2026</div>
-          <div class="timeline-content">
-            <div class="timeline-title">Threat Intelligence Engine — v4.0</div>
-            <p class="timeline-desc">Behavioral anomaly detection using on-device federated learning. Patterns learned entirely on your device, never shared.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <div class="container">
-      <div class="footer-bottom">
-        <span>© 2025 SentryEye — <a href="#" href="privacy.html" style="color:var(--violet);text-decoration:none;">Privacy Policy</a></span>
-        <span>Built by one developer. Audited by the community.</span>
-      </div>
-    </div>
-  </footer>
-
-<!-- ═══════════════════════════════════════════════════════════ -->
-
-<script src="script.js"></script>
-
-</body>
-</html>
+  </div>
+</section>
