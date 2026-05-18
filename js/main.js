@@ -7,10 +7,13 @@ document.addEventListener('DOMContentLoaded', () => {
   // --- Core Routing Engine ---
   async function router() {
     let hash = window.location.hash.replace('#', '') || 'home';
-    const validPages = ['home', 'about', 'blog', 'contact', 'privacy'];
+    
+    // 1. ADDED 'deleteaccount' TO THE VALID ROUTE WHITELIST
+    const validPages = ['home', 'about', 'blog', 'contact', 'privacy', 'deleteaccount'];
     if (!validPages.includes(hash)) hash = 'home';
 
     try {
+      // Fetches templates dynamically from the pages/ subdirectory
       const response = await fetch(`pages/${hash}.html`);
       if (!response.ok) throw new Error('Network error loading component view.');
       
