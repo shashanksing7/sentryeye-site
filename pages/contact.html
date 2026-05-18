@@ -1,4 +1,4 @@
-<section class="contact-hero">
+<!-- <section class="contact-hero">
   <div class="container">
     <span class="tag">// CONTACT</span>
     <h1 style="margin:1rem 0 1rem;">Get in touch.</h1>
@@ -25,6 +25,78 @@
           <div class="form-group"><label class="form-label">Message</label><textarea class="form-textarea" placeholder="Describe your issue..."></textarea></div>
           <button class="btn btn-primary" type="button">↗&thinsp; Send Message</button>
           <div class="form-success" id="form-success">✓ Message sent safely. You'll receive a reply within 48 hours.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+<section class="contact-hero">
+  <div class="container">
+    <span class="tag">// CONTACT</span>
+    <h1 style="margin:1rem 0 1rem;">Get in touch.</h1>
+    <p style="max-width:480px;line-height:1.75;font-size:1rem;">
+      Found a bug? Have a feature request? Want to contribute? Reach out directly — there's one developer on the other end, and they read every message.
+    </p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="contact-layout">
+      <div class="contact-info">
+        <h3>// DIRECT LINES</h3>
+        <div class="contact-detail">
+          <span class="contact-detail-label">Email</span>
+          <a href="mailto:hello@sentryeye.dev" class="contact-detail-val">hello@sentryeye.dev</a>
+        </div>
+        <div class="contact-detail">
+          <span class="contact-detail-label">GitHub</span>
+          <a href="https://github.com/shashanksing7/sentryeye-site" class="contact-detail-val">github.com/sentryeye</a>
+        </div>
+        <div class="contact-detail">
+          <span class="contact-detail-label">Issues / Bug Reports</span>
+          <a href="https://github.com/shashanksing7/sentryeye-site/issues" class="contact-detail-val">github.com/sentryeye/issues</a>
+        </div>
+        <div class="contact-detail">
+          <span class="contact-detail-label">Response Time</span>
+          <span class="contact-detail-val" style="color:var(--emerald);">Usually &lt; 48h</span>
+        </div>
+        <div style="margin-top:2rem;">
+          <div class="card" style="padding:1.25rem;">
+            <div style="font-family:var(--mono);font-size:0.65rem;color:var(--muted);margin-bottom:0.5rem;text-transform:uppercase;letter-spacing:0.08em;">// NOTE</div>
+            <p style="font-size:0.83rem;line-height:1.65;">
+              For security vulnerability reports, please use GitHub private security advisories rather than public issues. Responsible disclosure is always acknowledged.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <span class="tag" style="margin-bottom:1.5rem;display:inline-block;">// SEND A MESSAGE</span>
+        <div class="contact-form" id="contact-form">
+          <div class="form-group">
+            <label class="form-label">Name</label>
+            <input type="text" class="form-input" placeholder="Ada Lovelace" />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Email</label>
+            <input type="email" class="form-input" placeholder="ada@example.com" />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Subject</label>
+            <input type="text" class="form-input" placeholder="Bug report / Feature request / General" />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Message</label>
+            <textarea class="form-textarea" placeholder="Describe your issue or idea in detail..."></textarea>
+          </div>
+          <button class="btn btn-primary" type="button" onclick="submitForm()" style="align-self:flex-start;">
+            ↗&thinsp; Send Message
+          </button>
+          <div class="form-success" id="form-success">
+            ✓ Message sent safely. You'll receive a reply within 48 hours.
+          </div>
         </div>
       </div>
     </div>
