@@ -1,0 +1,151 @@
+<section class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div class="fade-in">
+        <div class="hero-tagline">ON-THE-EDGE MOBILE SECURITY</div>
+        <h1>Your device.<br>Your data.<br><em>Absolute isolation.</em></h1>
+        <p class="hero-sub">
+          SentryEye monitors and responds to threats entirely on-device. No data leaves your phone. No servers. No compromise. Built with Jetpack Compose for Android engineers who demand transparency.
+        </p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn btn-primary">⬇&thinsp; Get SentryEye</a>
+          <a href="#" class="btn btn-outline" onclick="return false;">&lt;/&gt;&thinsp; View Source</a>
+        </div>
+      </div>
+
+      <div class="phone-container fade-in">
+        <div class="phone-glow"></div>
+        <div class="phone">
+          <div class="phone-pill"></div>
+          <div class="phone-screen">
+            <div class="phone-dot-grid"></div>
+            <div class="app-topbar">
+              <div class="app-topbar-left">
+                <div class="app-shield-icon">🛡</div>
+                <div class="app-topbar-title">
+                  <span class="app-topbar-name">SENTRY/EYE</span>
+                  <span class="app-topbar-sub">v2.4.1 · ARMED</span>
+                </div>
+              </div>
+              <div class="app-monitoring-badge">
+                <div class="app-monitoring-dot"></div>MONITORING
+              </div>
+            </div>
+
+            <div class="app-hero-area">
+              <span class="app-hero-label">// DEVICE STATUS</span>
+              <div class="app-hero-heading">Your phone is<br><span class="status-word">protected</span></div>
+              <p class="app-hero-sub">Intruder detection active.<br>Any unauthorized access will be captured.</p>
+              <div class="app-stat">
+                <span class="app-stat-val">2</span>
+                <span class="app-stat-label">FAILED ATTEMPTS</span>
+              </div>
+            </div>
+
+            <div class="app-status-row">
+              <div class="app-status-row-left">
+                <div class="app-eye-box">👁</div>
+                <div class="app-status-text">
+                  <span class="app-status-main">Activated</span>
+                  <span class="app-status-since">since 09:01 AM</span>
+                </div>
+              </div>
+              <div class="app-toggle"></div>
+            </div>
+
+            <div class="app-bottom-nav">
+              <div class="app-nav-item selected">
+                <div class="app-nav-icon">⊞</div><span class="app-nav-label">Dashboard</span>
+              </div>
+              <div class="app-nav-item">
+                <div class="app-nav-icon">🔔</div><span class="app-nav-label">Alerts</span>
+              </div>
+              <div class="app-nav-item">
+                <div class="app-nav-icon">👤</div><span class="app-nav-label">Profile</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding:0; border-top:1px solid var(--border); border-bottom:none;">
+  <div class="container">
+    <div class="stats-row">
+      <div class="stat-item"><span class="stat-val">0</span><span class="stat-label">external servers</span></div>
+      <div class="stat-item"><span class="stat-val">&lt;2%</span><span class="stat-label">battery overhead</span></div>
+      <div class="stat-item"><span class="stat-val">AES-256</span><span class="stat-label">local encryption</span></div>
+      <div class="stat-item"><span class="stat-val">100%</span><span class="stat-label">open source</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="features">
+  <div class="container">
+    <div class="section-header fade-in">
+      <span class="tag">// CAPABILITIES</span>
+      <h2>Built for privacy.<br>Engineered for performance.</h2>
+      <p>Every feature in SentryEye is designed around a single constraint: your data stays on your device, always.</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">📸</div>
+        <div class="feature-tag"><span class="tag">intruder_detection</span></div>
+        <div class="feature-title">Intruder Detection</div>
+        <p class="feature-desc">Silently captures a front-camera image on repeated PIN failures. Images are encrypted and stored locally in the secure Room database — never transmitted.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🔒</div>
+        <div class="feature-tag"><span class="tag emerald">local_sandbox</span></div>
+        <div class="feature-title">Local Sandbox Architecture</div>
+        <p class="feature-desc">All threat data, captures, and logs are stored in an AES-256 encrypted SQLite/Room database on-device. Zero external servers means zero attack surface.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">☁️</div>
+        <div class="feature-tag"><span class="tag amber">cloud_sync</span></div>
+        <div class="feature-title">Direct Cloud Sync</div>
+        <p class="feature-desc">Optional Google Drive backup uses direct OAuth 2.0 authentication. Your encrypted backup travels directly device-to-Drive with no intermediate storage or logging.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">⚡</div>
+        <div class="feature-tag"><span class="tag">compose_ui</span></div>
+        <div class="feature-title">Jetpack Compose UI</div>
+        <p class="feature-desc">Built natively with Jetpack Compose for a lightweight, fluid interface. Background processing is meticulously optimized to maintain &lt;2% battery overhead.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="border-top:1px solid var(--border);">
+  <div class="container">
+    <div class="arch-callout">
+      <div>
+        <span class="tag" style="margin-bottom:1rem; display:inline-block;">// ARCHITECTURE</span>
+        <h2 style="margin-bottom:1rem;">Zero-trust.<br>Zero-server.</h2>
+        <p style="max-width:380px; line-height:1.75; margin-bottom:1.5rem;">SentryEye operates on a strict local-first, zero-trust architecture. The threat pipeline never touches a network socket unless you explicitly initiate a Drive backup.</p>
+        <a href="#about" class="btn btn-outline">Read the Architecture →</a>
+      </div>
+      <div class="arch-code"><span class="c-muted">// SentryEye Threat Pipeline</span>
+<span class="c-violet">class</span> <span class="c-emerald">ThreatPipeline</span>(db: <span class="c-amber">EncryptedRoomDB</span>) {
+  <span class="c-violet">fun</span> <span class="c-emerald">onAuthFailure</span>() {
+    camera.<span class="c-emerald">capture</span>().encrypt(<span class="c-amber">AES256</span>).writeTo(db)
+    network<span class="c-red">.block</span>()
+  }
+}</div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="container">
+    <span class="tag" style="margin-bottom:1rem; display:inline-block;">// GET STARTED</span>
+    <h2>Ready to reclaim control?</h2>
+    <p>Download SentryEye and deploy real on-device security in under five minutes.</p>
+    <div class="btn-row">
+      <a href="#" class="btn btn-primary" onclick="return false;">⬇ Download APK</a>
+      <a href="#privacy" class="btn btn-outline">View Privacy Policy</a>
+    </div>
+  </div>
+</section>
