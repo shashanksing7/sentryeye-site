@@ -7,6 +7,7 @@
   --violet: #8B5CF6;
   --fuchsia: #C026D3;
   --emerald: #22D3A5;
+  
   --red: #EF4444;
   --amber: #F59E0B;
   --muted: #71717A;
@@ -15,7 +16,7 @@
   --sans: 'DM Sans', system-ui, sans-serif;
 }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth;}
 body {
   background: var(--bg);
   color: var(--fg);
