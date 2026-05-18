@@ -1,0 +1,68 @@
+<section class="contact-hero">
+  <div class="container">
+    <span class="tag" style="color:var(--rose, #ef4444);">// PRIVACY & CONTROL</span>
+    <h1 style="margin:1rem 0 1rem;">Delete your account.</h1>
+    <p style="max-width:480px;line-height:1.75;font-size:1rem;">
+      We value your privacy control. If you choose to remove your account, all associated records will be scrubbed instantly and permanently from our infrastructure.
+    </p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="contact-layout">
+      <div class="contact-info">
+        <h3>// DATA RETENTION INFO</h3>
+        <div class="contact-detail">
+          <span class="contact-detail-label">Scope</span>
+          <span class="contact-detail-val">Full Profile & Hardware Configurations</span>
+        </div>
+        <div class="contact-detail">
+          <span class="contact-detail-label">Log Purge</span>
+          <span class="contact-detail-val" style="color:var(--rose, #ef4444);">Immediate upon confirmation</span>
+        </div>
+        <div class="contact-detail">
+          <span class="contact-detail-label">Compliance</span>
+          <span class="contact-detail-val">GDPR / Play Store & App Store Compliant</span>
+        </div>
+        
+        <div style="margin-top:2rem;">
+          <div class="card" style="padding:1.25rem; border-left: 2px solid var(--rose, #ef4444);">
+            <div style="font-family:var(--mono);font-size:0.65rem;color:var(--rose, #ef4444);margin-bottom:0.5rem;text-transform:uppercase;letter-spacing:0.08em;">// WARNING</div>
+            <p style="font-size:0.83rem;line-height:1.65;margin:0;">
+              This process is completely irreversible. Any active application monitoring nodes, historic threat logs, and notification tokens tied to this email identifier will be permanently destroyed.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <span class="tag" style="margin-bottom:1.5rem;display:inline-block;color:var(--rose, #ef4444);">// IDENTITY CONFIRMATION</span>
+        
+        <!-- Action can point directly to your authentication middleware endpoint -->
+        <form class="contact-form" id="delete-account-form" action="/api/account/delete" method="POST">
+          <div class="form-group">
+            <label class="form-label">Account Email</label>
+            <input type="email" name="email" class="form-input" required placeholder="ada@example.com" />
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label">Password</label>
+            <input type="password" name="password" class="form-input" required placeholder="••••••••••••" />
+          </div>
+          
+          <div class="form-group" style="display:flex; gap:0.75rem; align-items:flex-start; margin-top:1.5rem;">
+            <input type="checkbox" id="acknowledge-destruction" required style="margin-top:0.25rem; accent-color:var(--rose, #ef4444);" />
+            <label for="acknowledge-destruction" class="form-label" style="font-size:0.8rem; line-height:1.5; cursor:pointer; user-select:none;">
+              I acknowledge that this action will permanently terminate my SentryEye telemetry data and config maps without recovery options.
+            </label>
+          </div>
+          
+          <button class="btn" type="submit" style="align-self:flex-start; background-color:var(--rose, #ef4444); color:#fff; border:none; padding:0.6rem 1.2rem; cursor:pointer; font-weight:500;">
+            ☠&thinsp; Terminate Account
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
