@@ -6,29 +6,50 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // --- Core Routing Engine ---
   async function router() {
+    // Gracefully clean hash strings and default to home view context
     let hash = window.location.hash.replace('#', '') || 'home';
+    
+    // Explicitly handle inner-anchor routing adjustments (e.g., matching sections inside privacy)
+    if (hash.includes('pp-')) {
+      hash = 'privacy';
+    }
+
     const validPages = ['home', 'about', 'blog', 'contact', 'privacy'];
     if (!validPages.includes(hash)) hash = 'home';
 
     try {
+      // Force a purely relative call context to protect subdirectory hosting allocations
       const response = await fetch(`pages/${hash}.html`);
-      if (!response.ok) throw new Error('Network error loading component view.');
+      if (!response.ok) throw new Error(`[HTTP ${response.status}]: Failed to fetch view chunk.`);
       
-      viewport.innerHTML = await response.text();
+      const content = await response.text();
+      viewport.innerHTML = content;
+      
+      // Reset view context container to top elevation
       window.scrollTo({ top: 0, behavior: 'instant' });
       updateActiveLinks(hash);
       
-      // Initialize contextual page scripts
+      // Safe context initializations
       if (hash === 'home') initHomeMockup();
       if (hash === 'contact') initContactForm();
     } catch (err) {
-      viewport.innerHTML = `<section class="container"><p class="mono text-center" style="padding: 4rem 0; color: var(--red);">[Error 404]: Failed to compile edge view block.</p></section>`;
+      console.error("Routing Engine Fault:", err);
+      viewport.innerHTML = `
+        <section class="container">
+          <p class="mono text-center" style="padding: 6rem 0; color: var(--red);">
+            [Error 404]: Failed to compile edge view block.<br>
+            <span style="color: var(--muted); font-size: 0.8rem;">Target segment: pages/${hash}.html</span>
+          </p>
+        </section>
+      `;
     }
   }
 
   function updateActiveLinks(activeHash) {
-    navLinks.forEach(link => {
-      if (link.getAttribute('data-target') === activeHash) {
+    // Synchronize both standard layout links and responsive drawer menu contexts
+    document.querySelectorAll('.nav-links a, .mobile-menu a').forEach(link => {
+      const target = link.getAttribute('data-target') || link.getAttribute('href')?.replace('#', '');
+      if (target === activeHash) {
         link.classList.add('active');
       } else {
         link.classList.remove('active');
@@ -49,7 +70,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // --- Feature Initializers ---
   function initHomeMockup() {
-    document.querySelectorAll('.app-nav-item').forEach((item, index) => {
+    const navItems = document.querySelectorAll('.app-nav-item');
+    if (!navItems.length) return;
+
+    navItems.forEach((item, index) => {
       item.addEventListener('click', () => {
         document.querySelectorAll('.app-nav-item').forEach(n => n.classList.remove('selected'));
         item.classList.add('selected');
@@ -80,7 +104,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const formBtn = document.querySelector('#contact-form .btn');
     if (!formBtn) return;
 
-    formBtn.addEventListener('click', () => {
+    formBtn.addEventListener('click', (e) => {
+      e.preventDefault();
       const inputs = document.querySelectorAll('#contact-form input, #contact-form textarea');
       let isValid = true;
       
@@ -95,28 +120,42 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!isValid) return;
 
       formBtn.style.display = 'none';
-      document.getElementById('form-success').classList.add('show');
+      const successBanner = document.getElementById('form-success');
+      if (successBanner) successBanner.classList.add('show');
+      
       inputs.forEach(i => { i.value = ''; i.disabled = true; });
 
       setTimeout(() => {
-        document.getElementById('form-success').classList.remove('show');
+        if (successBanner) successBanner.classList.remove('show');
         formBtn.style.display = '';
         inputs.forEach(i => { i.disabled = false; });
       }, 5000);
     });
   }
 
-  // --- Event Bindings ---
-  document.querySelectorAll('[data-target]').forEach(trigger => {
-    trigger.addEventListener('click', (e) => {
-      const target = trigger.getAttribute('data-target');
-      window.location.hash = target;
-      closeMenu();
+  // --- Unified Action Bindings ---
+  // Intercept nav links cleanly while guaranteeing hash mutation completes smoothly
+  document.addEventListener('click', (e) => {
+    const targetLink = e.target.closest('.nav-links a, .mobile-menu a, .nav-logo');
+    if (!targetLink) return;
+
+    const targetView = targetLink.getAttribute('data-target') || targetLink.getAttribute('href')?.replace('#', '');
+    if (targetView && !targetView.startsWith('http') && !targetView.includes('pp-')) {
       e.preventDefault();
-    });
+      closeMenu();
+      
+      // Only mutate if state change is novel to prevent redundant history stack loops
+      if (window.location.hash !== `#${targetView}`) {
+        window.location.hash = targetView;
+      } else {
+        router(); // Explicit force reload if clicking active tab context
+      }
+    }
   });
 
   hamburger.addEventListener('click', toggleMenu);
   window.addEventListener('hashchange', router);
-  router(); // Boot router load
+  
+  // Execution Core Initialization
+  router();
 });
