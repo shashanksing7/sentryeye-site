@@ -247,4 +247,4 @@ document.addEventListener('DOMContentLoaded', () => {
   hamburger.addEventListener('click', toggleMenu);
   window.addEventListener('hashchange', router);
   router(); // Boot router load
-});
+}); 
